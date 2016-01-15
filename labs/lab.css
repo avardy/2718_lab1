@@ -1,0 +1,88 @@
+@media print {
+    div.exercise h2 { page-break-before: avoid;}
+    div.exercise li { page-break-inside: avoid;}
+    div.exercise p { page-break-inside: avoid;}
+    div.exercise pre { page-break-inside: avoid;}
+    div.exercise div.answer { page-break-inside: avoid;}
+}
+@media screen {
+    body {
+        margin-left : 15mm;
+    }
+}
+tt.hi {
+    background : rgb(220,255,220);
+    padding-left : 2mm;
+    padding-right : 2mm;
+    border : thin blue solid;
+}
+tt { font-size :1.15em; }
+h1 { font-size : 16pt; }
+h2 { font-size : 14pt; }
+div.answer {
+    border : thin black solid;
+    margin-top : 2mm;
+    margin-bottom : 5mm;
+    margin-left : 5mm;
+    margin-right : 10mm;
+    padding-left : 2mm;
+}
+
+pre.cmd {
+    background : rgb( 255,255,220 );
+    margin-left : 5mm;
+    margin-right : 20mm;
+    padding : 2mm;
+}
+
+div.exercise ol {
+    list-style-type : none;
+}
+
+body {
+    counter-reset: section;
+}
+
+div.exercise h2:before {
+    counter-increment: section;
+    content : "Exercise " counter(section) ": ";
+}
+
+div.exercise ol.exer {
+    counter-reset: question;
+}
+
+div.exercise ol.exer > li:before {
+    counter-increment: question;
+    content : "[Question " counter(section) "." counter(question) "]";
+    font-weight : bold;
+    color : rgb(20,200,20);
+}
+
+pre.data {
+    border : thin green solid;
+    margin-left : 10mm;
+    margin-right : 10mm;
+    padding : 2mm;
+}
+
+pre.output {
+    border : thin blue solid;
+    background : rgb(240,240,255);
+    margin-left : 10mm;
+    margin-right : 10mm;
+    padding : 2mm;
+}
+
+script.show-code {
+    margin-top: 2mm;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    padding-left: 3mm;
+    padding-right: 3mm;
+    padding-top: -1mm;
+    display : block;
+    white-space : pre;
+    font-family : monospace;
+    border : 0.6mm black solid;
+}

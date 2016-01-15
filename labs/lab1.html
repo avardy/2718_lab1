@@ -1,0 +1,253 @@
+<html>
+<head>
+<title>CS2718 Lab 1 </title>
+<link rel="stylesheet" type="text/css" href="lab.css">
+</head>
+<body>
+<h1>CS2718 Lab 1 - An Introduction</h1>
+<p>
+Please answer each question in the space provided.
+If the space is not enough, then use the back of the sheet.
+You must submit your lab exercises at the end of the lab with your
+name and student number.
+</p>
+<div class="exercise">
+<h2>Course git repo</h2>
+<p>
+    In a terminal window, enter the following:
+</p>
+<pre class="cmd">
+% cd /tmp
+% git clone https://www.cs.mun.ca/cgi-bin/user-cgi/~rod/auth/git/cs2718.git
+% cd cs2718
+</pre>
+<p>
+Using some or all of the following commands <tt>cd</tt>, <tt>ls</tt>,
+and <tt>pwd</tt>, determine the following, also state the commands used:
+</p>
+<ol class="exer">
+<li> The absolute path name of the current directory.
+<br>Command(s):
+<div class="answer" style="height:25mm"></div>
+<br>Output:
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> The size in bytes for <tt>README</tt>.
+<br>Command(s):
+<div class="answer" style="height:25mm"></div>
+<br>Output:
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> The largest pdf file in <tt>notes/pdf</tt>.
+<br>Command(s):
+<div class="answer" style="height:25mm"></div>
+<br>Output:
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> [Optional] Describe how firefox can be used to create a pdf file
+from <tt>info.html</tt>.
+<div class="answer" style="height:40mm"></div>
+</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h2>Assignment git repos</h2>
+<p>
+    In a terminal window, enter the following:
+</p>
+<pre class="cmd">
+% cd /tmp &amp;&amp; rm -rf myweb # delete only if cd worked
+% mkdir myweb
+% cd myweb
+% echo "&lt;html&gt;&lt;body&gt;HI&lt;/body&gt;&lt;/html&gt;" &gt; hi.html
+% git init # creates a git repo
+% git status
+% git add hi.html
+% git commit -m "assignment 1 start"
+% git log
+% git remote add origin https://www.cs.mun.ca/cgi-bin/user-cgi/~rod/auth/git/cs2718/assigns/a1.git
+% git push --all origin -u
+# requires your password
+</pre>
+<p>
+A git repo with one file has been set up and copied to the remote repo.
+The following commands will change a file and push the change
+to the remote repo.
+</p>
+<pre class="cmd">
+% sed s/HI/hi/ &lt;hi.html &gt; xx.html
+% mv xx.html hi.html
+% git add hi.html
+% git commit -m "to lowercase"
+% git push
+# requires your password
+% git log
+</pre>
+<p>
+Enter the following commands in a terminal window
+(these commands should demonstrate that the remote
+repo is setup):
+</p>
+<pre class="cmd">
+% cd /tmp
+% git clone https://www.cs.mun.ca/cgi-bin/user-cgi/~rod/auth/git/cs2718/assigns/a1.git
+% cd a1
+</pre>
+<p>
+How can the <tt>ls -lR </tt> command be used to provide a
+check (the check will be incomplete) that the directories
+<tt>/tmp/myweb</tt> and <tt>/tmp/a1</tt> contain
+the same informaton.
+</p>
+<div class="answer" style="height:60mm"></div>
+</div>
+
+<div class="exercise">
+<h2>Relative and absolute path names</h2>
+<p>
+Consider the following two directories:
+</p>
+<ul>
+<li><tt>/usr/shar/dict</tt></li>
+<li><tt>/usr/lib/python2.7</tt></li>
+</ul>
+<ol class="exer">
+<li>
+Using the absolute path name, what <tt>cd</tt> command would
+set the current directory to [1].
+<div class="answer" style="height:25mm"></div>
+</li>
+<li>
+Using a relative path name, what <tt>cd</tt> command would
+change into the [2] directory.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li>
+Using a relative path name, what <tt>cd</tt> command would
+change back into the [1] directory.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li>
+Is there any advange to using the relative path names in
+the above examples?
+<div class="answer" style="height:50mm"></div>
+</li>
+</ol>
+</div>
+
+
+<div class="exercise">
+<h2>Using <tt>ls</tt>, <tt>file</tt>, <tt>less</tt>, <tt>man</tt></h2>
+
+<p>
+Change in to the <tt>/usr/share/dict</tt> directory,
+and answer the following, state what command(s) you used.
+</p>
+<ol class="exer">
+<li> Determine the type of the files present.
+<div class="answer" style="height:40mm"></div>
+</li>
+<li> Identify any symbolic links in this directory.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li>For any symbolic links, state the file referenced by the link.
+What type of file is referenced?
+<div class="answer" style="height:60mm"></div>
+</li>
+<li> Using the <tt>less</tt> command, determine the last 3 lines
+of the <tt>words</tt> file. Use <tt>man less</tt> to find
+a quick way to go to the end of the file. State the way.
+<div class="answer" style="height:40mm"></div>
+</li>
+<li> How would you check to see if a line containing <tt>kumquat</tt>
+appeared in the <tt>words</tt> file using <tt>less</tt>?
+Consult the man page if necessary.
+<div class="answer" style="height:40mm"></div>
+</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h2>File manipulation commands</h2>
+<p>
+What <tt>commands</tt> could be used to accomplish to following?
+</p>
+<ol class="exer">
+<li> Create a directory called <tt>my-dictionary</tt> in your home directory.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> Change into the directory with an absolute path name.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> Create a symbolic link to <tt>/usr/share/words</tt> called <tt>words</tt>.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> Copy <tt>/usr/share/words</tt> to a file called <tt>local-words</tt>.
+<div class="answer" style="height:25mm"></div>
+</li>
+<li> State which of the previous two commands is the most efficient.
+Justiy your answer.
+<div class="answer" style="height:60mm"></div>
+</li>
+<li> Determine if a <em>hard</em> link can made to <tt>words</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> Determine if a <em>hard</em> link can made to <tt>local-words</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> Change to your home directory, make a complete copy of
+<tt>my-dictionary</tt> called <tt>my-dictionary-2</tt>.
+How were the symbolic links copied?
+<div class="answer" style="height:60mm"></div>
+</li>
+<li> If you wish, remove the <tt>my-dictionary</tt> and <tt>my-dictionary-2</tt>
+directories. What command would you use.
+<div class="answer" style="height:25mm"></div>
+</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h2>Globbing</h2>
+<p>
+Change into the <tt>/bin</tt> directory and use <em>globbing</em>
+to determine the following. State the command and the result.
+</p>
+<ol class="exer">
+<li> The names of all the four letter files that start with <tt>c</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> The names of all the five letter files that start with <tt>z</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> The names of all the files that contain <tt>x</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> The names of all the files that start with <tt>l</tt>
+and end with <tt>s</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> The names of all the files that start with <tt>l</tt> or <tt>m</tt>
+and end with <tt>d</tt> or <tt>t</tt>.
+<div class="answer" style="height:30mm"></div>
+</li>
+<li> Identify if any of the files that start with <tt>l</tt> or <tt>m</tt>
+and end with <tt>d</tt> or <tt>t</tt> are symbolic links.
+<div class="answer" style="height:30mm"></div>
+</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h2>Checking <tt>apt-get</tt></h2>
+<p>
+Enter the following command and report the result.
+</p>
+<pre class="cmd">
+% sudo apt-get check
+</pre>
+<div class="answer" style="height:30mm"></div>
+</div>
+</body>
+</html>
